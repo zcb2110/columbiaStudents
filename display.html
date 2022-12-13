@@ -15,7 +15,6 @@ var timestamp;
 d3.csv("https://storage.googleapis.com/cloud-computing-final/full_addr.csv", function(data) {
 // List groups
 for (var i = 0; i < data.length; i++) { 
-  console.log(data);
   lat = parseFloat(data[i]['GPS_LAT']);
   lon = parseFloat(data[i]['GPS_LONG']);
   count = parseInt(data[i]['Device Count']);
@@ -23,6 +22,7 @@ for (var i = 0; i < data.length; i++) {
   total = total + count;
   values.push([lat, lon, count]);
   };
+console.log(values);
 });
 
 function myMap() {
